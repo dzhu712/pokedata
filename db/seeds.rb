@@ -47,7 +47,6 @@ puts 'Table Shapes has been populated.'
 
 
 (1..1025).each do |pokemon_id|
-  puts pokemon_id
   response = HTTParty.get("https://pokeapi.co/api/v2/pokemon/#{pokemon_id}/")
   pokemon_data = JSON.parse(response.body)
 
