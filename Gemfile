@@ -68,10 +68,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "bootstrap", "~> 5.3"
-
-gem "jquery-rails", "~> 4.6"
+gem "httparty", "~> 0.21.0"
 
 gem "sassc-rails", "~> 2.1"
-
-gem "httparty", "~> 0.21.0"
