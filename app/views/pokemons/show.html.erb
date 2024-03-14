@@ -5,21 +5,19 @@
         <div class="caption">
           <h3><%= @pokemon.name.capitalize %></h3>
 
-          <p>Weight: <%= @pokemon.weight %></p>
-          <p>Height: <%= @pokemon.height %></p>
+          <p>Weight: <%= @pokemon.weight %> hectograms</p>
+          <p>Height: <%= @pokemon.height %> decimetres</p>
 
           <p>Shape: <%= link_to @pokemon.shape.name, shape_path(@pokemon.shape) %></p>
 
           <p>Types:
-            <% @pokemon.types.each do |type| %>
-              <%= link_to type.name, type_path(type) %>
-            <% end %>
+            <% types = @pokemon.types.map { |type| link_to(type.name, type_path(type)) } %>
+            <%= types.join(', ').html_safe %>
           </p>
 
           <p>Abilities:
-            <% @pokemon.abilities.each do |ability| %>
-              <%= link_to ability.name, ability_path(ability) %>
-            <% end %>
+            <% abilities = @pokemon.abilities.map { |ability| link_to(ability.name, ability_path(ability)) } %>
+            <%= abilities.join(', ').html_safe %>
           </p>
         </div>
       </div>
